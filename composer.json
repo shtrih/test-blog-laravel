@@ -1,0 +1,14 @@
+{
+    "name": "dmorozov/test-blog-laravel",
+    "type": "project",
+    "require-dev": {
+        "laravel/homestead": "^4.0"
+    },
+    "authors": [
+        {
+            "name": "shtrih",
+            "email": "shtrih@hitagi.ru"
+        }
+    ],
+    "require": {}
+}

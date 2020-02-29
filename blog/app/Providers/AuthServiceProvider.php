@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('view-posts', function ($user) {
+            /** @var \App\User $user */
+            return $user->isAdmin();
+        });
     }
 }

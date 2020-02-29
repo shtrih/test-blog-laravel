@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>You are logged in!</p>
+
+                    <p>Check out your <a href="{{ route('post') }}">Post</a>.</p>
+                    <p>You can
+                        @if (!Auth::user()->isAdmin())
+                            not
+                        @endif
+                        see <a href="{{ route('posts') }}">Posts</a> of all users.
+                    </p>
                 </div>
             </div>
         </div>

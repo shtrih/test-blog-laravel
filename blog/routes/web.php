@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post', 'PostController@post')->name('post')->middleware('auth');
-Route::get('/posts', 'PostController@posts')->name('posts')->middleware('auth', 'check_user_type:' . \App\User::TYPE_ADMIN);
+Route::get('/post', 'PostController@post')->name('post');
+Route::get('/posts', 'PostController@posts')->name('posts');

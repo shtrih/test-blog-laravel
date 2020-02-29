@@ -10,6 +10,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const
+        TYPE_USER = 0,
+        TYPE_ADMIN = 1;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin()
+    {
+        return $this->type === self::TYPE_ADMIN;
+    }
+
+    public function post()
+    {
+        return $this->hasOne('App\Post');
+    }
 }
